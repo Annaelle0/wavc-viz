@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wavc-viz"
+dynamic = ["version"]
+description = "Windows Audio Visualiser Console: a CAVA-inspired spectrum visualiser (WASAPI loopback): WASAPI loopback + FFT, in your terminal or a native window"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Annaelle0", email = "326922285+Annaelle0@users.noreply.github.com" }]
+keywords = ["audio", "visualiser", "spectrum", "cava", "wasapi", "windows", "terminal", "fft"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+]
+dependencies = [
+    "numpy>=1.22",
+    "PyAudioWPatch>=0.2.12.8; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.5"]
+build = ["pyinstaller>=6"]
+
+[project.scripts]
+wavc = "wavc.cli:main"
+wavc-viz = "wavc.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Annaelle0/wavc-viz"
+Issues = "https://github.com/Annaelle0/wavc-viz/issues"
+Upstream = "https://github.com/karlstav/cava"
+
+[tool.setuptools.dynamic]
+version = { attr = "wavc.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "UP006", "UP007", "UP035", "UP045"]
