@@ -13,11 +13,12 @@ smooth, gravity-damped bars — in your terminal or in a native window.
 ![Python](https://img.shields.io/badge/python-3.9%E2%80%933.14-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078d4)
 
-![aurora theme](docs/terminal-aurora.png)
-
 <p align="center">
-  <img src="docs/terminal-fire-mirror.png" width="49%" alt="mirrored stereo, fire theme">
-  <img src="docs/terminal-synthwave-horizontal.png" width="49%" alt="synthwave theme, monstercat smoothing">
+  <img src="docs/demo.gif" width="460" alt="wavc-viz reacting to music: terminal themes switching live, then the native window">
+</p>
+<p align="center">
+  <sub>Real capture, no audio: terminal themes switching live with <code>c</code>, then the native window (<code>--gui</code>).
+  <a href="docs/demo.mp4">Higher-quality video</a></sub>
 </p>
 
 ## Features
@@ -35,6 +36,29 @@ smooth, gravity-damped bars — in your terminal or in a native window.
 - **Robust** — copes with silence (loopback sends no packets while nothing plays), device
   switches (plugging in headphones), and terminal resizes.
 - **Single `.exe`** available from Releases; or `pip install`.
+
+## Gallery
+
+Real captures of wavc-viz playing music on Windows: terminal themes, the native window, and the
+transparent desktop widget.
+
+<p align="center">
+  <img src="docs/screenshot-terminal-sunset.png" width="32%" alt="Terminal, sunset theme">
+  <img src="docs/screenshot-terminal-matrix.png" width="32%" alt="Terminal, matrix theme">
+  <img src="docs/screenshot-terminal-classic.png" width="32%" alt="Terminal, classic theme">
+</p>
+<p align="center">
+  <img src="docs/screenshot-gui-aurora.png" width="60%" alt="Native window, aurora theme">
+  <img src="docs/screenshot-widget.png" width="38%" alt="Transparent desktop widget over the wallpaper">
+</p>
+
+**More layouts** (rendered from the built-in demo signal with `scripts/make_screenshots.py`):
+mirrored stereo (`-o mirror --stereo`) and a horizontal gradient with monstercat smoothing.
+
+<p align="center">
+  <img src="docs/terminal-fire-mirror.png" width="49%" alt="Mirrored stereo, fire theme">
+  <img src="docs/terminal-synthwave-horizontal.png" width="49%" alt="Synthwave theme, horizontal gradient, monstercat smoothing">
+</p>
 
 ## Install
 

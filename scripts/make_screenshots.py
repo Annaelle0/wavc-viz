@@ -68,7 +68,6 @@ def shot(name: str, cols: int, rows: int, **cfg_kw) -> None:
 
 
 if __name__ == "__main__":
-    shot("terminal-aurora.png", 110, 24, theme="aurora")
     shot("terminal-fire-mirror.png", 110, 24, theme="fire", orientation="mirror", channels="stereo",
          bar_width=1)
     shot("terminal-synthwave-horizontal.png", 110, 24, theme="synthwave",
